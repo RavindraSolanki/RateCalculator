@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace RateCalculator.ConsoleApp
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static int Main(string[] args)
         {
+
+            return 1;
         }
     }
 }
