@@ -46,6 +46,7 @@
     <Compile Include="LoanFinder36Months.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Quote.cs" />
+    <Compile Include="Utils\LoadLenders.cs" />
     <Compile Include="Utils\Repayment.cs" />
     <Compile Include="Utils\RepaymentCalculator.cs" />
   </ItemGroup>
