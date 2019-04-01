@@ -26,10 +26,15 @@ namespace RateCalculator.LoanServices
                 return null;
             }
 
+            var repayment = Utils.RepaymentCalculator.GetRepayment(requestedAmount, (decimal)lenderWithLowestRate.Rate, 36);
+
             return new Quote
             {
                 FromLender = lenderWithLowestRate,
-                OfferedRate = lenderWithLowestRate.Rate
+                OfferedRate = lenderWithLowestRate.Rate,
+                RequestedAmount = requestedAmount,
+                MonthlyRepayment = repayment.MonthlyRepaymentAmount,
+                TotalRepayment = repayment.TotalRepaymentAmount
             };
         }
     }
