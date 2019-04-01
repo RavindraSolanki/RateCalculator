@@ -10,7 +10,15 @@ namespace RateCalculator.LoanServices.Utils
     {
         public static Repayment GetRepayment(int borrowedAmount, decimal rate, int durationInMonths)
         {
-            throw new NotImplementedException();
+            var monthlyRate = (double)rate / 12;
+            var negativeNumberOfMonths = 0 - durationInMonths;
+            var monthlyRepayment = borrowedAmount * monthlyRate / (1 - Math.Pow(1 + monthlyRate, negativeNumberOfMonths));
+
+            return new Repayment(
+                borrowedAmount,
+                rate, 
+                Math.Round((decimal)monthlyRepayment, 2),
+                Math.Round((decimal)monthlyRepayment * durationInMonths, 2));
         }
     }
 }
