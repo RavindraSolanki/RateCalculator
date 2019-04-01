@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace RateCalculator.LoanServices
 {
-    public class Class1
+    public class Lender
     {
+        public string Name { get; set; }
+        public decimal Rate { get; set; }
+        public decimal AvailableAmount { get; set; }
+
     }
 }

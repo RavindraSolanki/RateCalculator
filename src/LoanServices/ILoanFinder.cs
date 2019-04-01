@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RateCalculator.Tests.LoanServicesTests
+namespace RateCalculator.LoanServices
 {
-    public class Class1
+    public interface ILoanFinder
     {
+        Quote GetLowestRateQuote(int requestedAmount);
     }
 }
