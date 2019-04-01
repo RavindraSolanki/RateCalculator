@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace RateCalculator.LoanServices.Utils
 {
-    public class Repayment
+    public class RepaymentInfo
     {
-        public Repayment(int borrowedAmount, 
+        public RepaymentInfo(int borrowedAmount, 
             decimal rate, 
             decimal monthlyRepaymentAmount, 
             decimal totalRepaymentAmount)
