@@ -16,7 +16,21 @@ namespace RateCalculator.LoanServices
 
         public Quote GetLowestRateQuote(int requestedAmount)
         {
-            throw new NotImplementedException();
+            var lenderWithLowestRate = _lenders
+                .Where(_ => _.AvailableAmount >= requestedAmount)
+                .OrderBy(_ => _.Rate)
+                .FirstOrDefault();
+
+            if (lenderWithLowestRate == null)
+            {
+                return null;
+            }
+
+            return new Quote
+            {
+                FromLender = lenderWithLowestRate,
+                OfferedRate = lenderWithLowestRate.Rate
+            };
         }
     }
 }
