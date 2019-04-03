@@ -41,6 +41,15 @@ namespace RateCalculator.Tests.ConsoleAppTests
         }
 
         [Theory]
+        [InlineData(1000)]
+        [InlineData(15000)]
+        public void WhenAmountIsBetween1000And15000_ShouldExitWithoutError(int validAmount)
+        {
+            RunConsoleApp(Test1LenderCsvFile, validAmount);
+            Assert.Equal(0, _lastExitCode);
+        }
+
+        [Theory]
         [InlineData(1001)]
         [InlineData(1099)]
         [InlineData(14901)]

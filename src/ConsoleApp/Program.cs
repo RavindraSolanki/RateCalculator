@@ -19,7 +19,7 @@ namespace RateCalculator.ConsoleApp
             }
 
             var requestedAmount = int.Parse(args[1]);
-            if (requestedAmount < 10000 || requestedAmount > 15000)
+            if (requestedAmount < 1000 || requestedAmount > 15000)
             {
                 Console.WriteLine($"Requested amount {csvFilePath} is invalid. Min amount is 10000 and max amount is 15000");
                 return 1;
